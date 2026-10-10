@@ -1,10 +1,10 @@
 work:
-- title: "Stress 2.0 · Trade Wind Down（TWD）压力测试数据链路"
+- title: "Stress 2.0 · Trade Wind Down（TWD）数据链路"
   time: "2024.01 - 至今"
   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
   position: "Analyst (Senior Software Development)"
   content:
-  - "负责 TWD 压力测试链路的 Python 侧：从 UDW、Prism（ActivePivot 风险数据仓库）、市场数据与 Excel 输入多源取数（MDX / REST / Dremio SQL / 文件导出），完成 Data Object 与 Scenario 领域建模、后处理与落盘，单批约 800 MB（4 类 scenario × ~200 MB）。"
+  - "负责 TWD Stress 2.0 链路的 Python 侧：从 UDW、Prism（ActivePivot 风险数据仓库）、市场数据与 Excel 输入多源取数（MDX / REST / Dremio SQL / 文件导出），完成 Data Object 与 Scenario 领域建模、后处理与落盘，单批约 800 MB（4 类 scenario × ~200 MB）。"
   - "主导数据源切换，与业务方完成 UAT 验收。"
   - "基于 Fingal 计算框架实现部分压力因子计算（含 CS01）；作为 ComputeGrid 调用方对接外部计算引擎，准备输入、回收结果。"
   - "重构 TWD 领域模型：data object 的 skid 统一为 identifier，消除对象重复创建；版本递增抽象为独立方法，保证各处版本语义一致。"
