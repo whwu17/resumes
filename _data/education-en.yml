@@ -1,0 +1,31 @@
+- id: post
+  logo: ../images/sei.png
+  school: East China Normal University
+  department: School of Software Engineering
+  location: Shanghai, China
+  time: 2020.09-2023.06
+  major: M.Eng. in Software Engineering (Academic)
+  note: Graduated 2023.06
+  supervisor: Prof. Chao Peng
+  gpa: 89.68/100
+  contributions:
+  - KSEM 2021 (CCF-C), first author
+  - SMC 2021, co-author
+  - Huawei Ascend Model Zoo
+  - OpenMLDB / WeOpen Star
+  - Federated-learning seminars, 2020.09-2021.01
+- id: under
+  logo: ../images/sei-under.png
+  school: East China Normal University
+  department: School of Computer Science and Software Engineering
+  location: Shanghai, China
+  time: 2016.09-2020.06
+  major: B.Eng. in Software Engineering
+  direction: Software Science and Technology
+  advisor: Prof. Yongxin Zhao
+  gpa: 3.66/4.0 (13/174)
+  spa: 3.75/4.0
+  courses:
+  - Linear Algebra / Operating Systems / Discrete Mathematics
+  - CSAPP / Introduction to Algorithms / Cloud Computing
+  - OOAD / Databases / Automata Theory / Event-B

@@ -1,0 +1,25 @@
+skills:
+- name: Python
+  score: 88
+- name: Java
+  score: 80
+- name: Prefect
+  score: 80
+- name: SQL
+  score: 80
+- name: MinIO / S3
+  score: 72
+- name: Spring Boot
+  score: 75
+- name: FastAPI / Django
+  score: 72
+- name: AI-assisted Dev
+  score: 88
+list:
+- 'Python: Prefect orchestration, FastAPI, Django, pandas / numpy; unit, integration and E2E tests; production support.'
+- 'Java and web: Spring Boot, MySQL (MyBatis / JPA), React.js, Vue.js; Redis, Nginx reverse proxy.'
+- 'Data and storage: Dremio, SQL Server, MinIO object storage, AWS S3; ActivePivot (MDX).'
+- 'Engineering: Linux scripting across prod / dev; AWS deployment (systemd, Jenkins); Git, Maven; Selenium, JMeter.'
+- 'Process: Agile / Scrum through requirements, design, QA and UAT; change control and testing evidence.'
+- 'Proficient in AI-assisted development: Claude Code for refactoring, test generation, branch merging, data comparison, minimal reproductions and incident analysis.'
+- 'Open source: WeOpen Star, OpenMLDB, Huawei Ascend Model Zoo, OI Wiki. Cross-region collaboration in English.'

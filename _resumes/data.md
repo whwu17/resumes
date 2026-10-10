@@ -1,5 +1,7 @@
 ---
 layout: template-site
+langpair: ../data-en/
+langlabel: English
 data:
 - id: home
   page: main.html

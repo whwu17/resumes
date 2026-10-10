@@ -55,6 +55,9 @@
           <li><a href="resume">Resume</a></li>
           <li><a href="services">Services</a></li>
           <li><a href="portfolio">Portfolio</a></li> -->
+          {% if page.langpair %}
+          <li><a id="absolute" href="{{ page.langpair }}">{{ page.langlabel }}</a></li>
+          {% endif %}
           <li><a id="absolute" href="https://whwu17.github.io/">Visit My Homepage</a></li>
           <li></li>
         </ul>

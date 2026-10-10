@@ -1,0 +1,21 @@
+skills:
+- name: Python
+  score: 88
+- name: SQL
+  score: 80
+- name: Prefect / Airflow
+  score: 78
+- name: MinIO / S3
+  score: 72
+- name: FastAPI
+  score: 70
+- name: AI-assisted Dev
+  score: 88
+list:
+- 'Python data processing: pandas / numpy; multi-source ingestion (REST, MDX, Dremio SQL, files); ETL and post-processing at GB scale per run.'
+- 'Orchestration: Prefect (dependencies, wait-for, parallelism control); Airflow.'
+- 'Storage and query: Dremio, SQL Server, MySQL, MinIO / AWS S3, Redis; ActivePivot (MDX).'
+- 'Data quality: upload-count validation, fail-fast on empty inputs, old-vs-new source comparison, UAT sign-off.'
+- 'Serving: FastAPI / Django data APIs; Status ID for long-running jobs and concurrency.'
+- 'Visualisation: Echarts, Zeppelin, Graphviz; TensorFlow model migration.'
+- 'Proficient in AI-assisted development: Claude Code for data-source comparison, script and test generation and debugging. Cross-region work in English.'
