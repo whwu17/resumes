@@ -2,7 +2,7 @@
 # Site
 
 title: "Wenhan's Resume"
-url: "https://notefun.github.io/resumes"
+url: "https://whwu17.github.io/resumes"
 
 # ---
 # Author
@@ -12,7 +12,7 @@ author:
   avatar       : "../images/profile.png" 
   googlescholar: "https://scholar.google.com/citations?user=NBSeJLkAAAAJ&hl=en&oi=sra"
   github       : "ivyee17"
-  linkedin     : "https://www.linkedin.cn/injobs/in/wu-wenhan-52453a206"
+  linkedin     : "https://www.linkedin.com/in/wu-wenhan"
   gitee        : "wenhan17" ## self-defined val!! not compat with academic-page sidebar!
 
 slogen: "Life is not a check-list of acquisition or achievement. Your qualifications, your CV, are not your life. Life is difficult, and complicated, and beyond anyone’s total control, and the humility to know that will enable you to survive its vicissitudes."

@@ -1,7 +1,7 @@
 
 # Wenhan's Home
 
-Nothing more than visiting right now: [Link](https://ivyee17.github.io/)!
+Nothing more than visiting right now: [Link](https://whwu17.github.io/)! Resume pages: [developer](https://whwu17.github.io/resumes/developer/) · [data](https://whwu17.github.io/resumes/data/).
 
 ## Develop
 

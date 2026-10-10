@@ -8,6 +8,32 @@
           <h2>Experiences</h2>
           <p>Slide down to view more of my experiences.</p>
         </div>
+        {% if page.work %}
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="resume-title">Work Experience</h3>
+            {% for job in page.work %}
+            <div class="resume-item" data-aos="fade-up">
+              <h4>{{job.title}}</h4>
+              <h5>{{job.time}}</h5>
+              {% if job.position %}
+              <p><em>{{job.position}}</em></p>
+              {% endif %}
+              {% if job.company %}
+              <p><em>{{job.company}}</em></p>
+              {% endif %}
+              <p>
+              <ul>
+                {% for c in job.content %}
+                <li>{{c}}</li>
+                {% endfor %}
+              </ul>
+              </p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
         <div class="row">
           <div class="col-lg-6">
             <h3 class="resume-title">Internships</h3>

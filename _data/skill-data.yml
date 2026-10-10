@@ -1,28 +1,30 @@
 skills:
-- name: java
-  score: 85
-- name: MySQL
+- name: Python (pandas / numpy)
+  score: 88
+- name: SQL (SQL Server / MySQL / Dremio)
   score: 80
-- name: Python
+- name: Prefect / Airflow
+  score: 78
+- name: MinIO / S3 / Parquet
+  score: 72
+- name: FastAPI / Django
   score: 70
-- name: R
-  score: 65
-- name: Tensorflow
-  score: 60
-- name: Numpy
+- name: Java
+  score: 75
+- name: AI-assisted Dev (Claude Code)
+  score: 88
+- name: Tensorflow / R
   score: 55
-- name: Shell / Linux
-  score: 60
-- name: Federated Learning
-  score: 70
+- name: Echarts / Zeppelin
+  score: 65
 
 list:
-- 熟悉R语言、Java和Python（Numpy、Matplot等），对MySQL较为熟悉， 包括CURD和sqldump等，有一定的编程经验。
-- 了解numpy、pandas、matplotlib等常用数据处理包，使用过Echarts进行数据可视化。
-- 对Execl、Access较为熟悉，了解帆软等数据处理软件和Echarts、Graphviz等可视化软件，以及Bootstrap、Vue.js等前端设计规范与框架。
-- 对Linux系统的命令有了解。使用过shell脚本、Electron.js框架和面向对象的设计分析。
-- 阅读过计算机视觉和神经网络的相关文献，使用过Numpy、TensorFlow等常用的深度学习框架。
+- Python 数据处理：pandas / numpy，多源取数（REST、MDX、Dremio SQL、文件），ETL 与后处理，单批 GB 级。
+- 调度与编排：Prefect（任务依赖、wait-for、并行度控制）；用过 Airflow。
+- 存储与查询：Dremio、SQL Server、MySQL、MinIO / AWS S3 对象存储、Redis；ActivePivot（MDX）。
+- 数据质量：上传数量校验、空文件快速失败、新旧数据源比对、UAT 验收。
+- 服务化：FastAPI / Django 暴露数据接口；Status ID 处理长任务与并发。
+- 可视化与分析：Echarts、Zeppelin、Graphviz；熟悉 R；TensorFlow 模型迁移经验（RealNVP → 昇腾）。
+- 熟练掌握 AI 辅助开发：Claude Code 做新旧数据源比对、脚本与测试生成、排障，纳入日常流程。
 - 了解联邦学习、GAN、图神经网络、机器学习等相关知识。熟悉RE、PDA、自动机相关词法语法知识，MySQL数据库以及线性代数等相关数学知识。
-- 多次参与WeOpen Star、Ascend Model Zoo等开源项目，并合并了多个分支进入master分支。
-- 乐于团队开发，具有较强的组织、自学、沟通能力，热爱学习，勇于挑战。
-
+- 多次参与WeOpen Star、OpenMLDB、Ascend Model Zoo等开源项目，并合并了多个分支进入master分支。跨时区跨地区协作，英文工作语言。

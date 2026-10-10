@@ -1,11 +1,11 @@
 - id: post
-  logo: "/images/sei.png" 
+  logo: "../images/sei.png" 
   school: 华东师范大学
   department: 信息学部 软件工程学院
   location: Shanghai, China
-  time: 2020.09-2023.08
+  time: 2020.09-2023.06
   major: Master of Engineering (Academic)
-  note: In progress
+  note: Graduated 2023.06
   supervisor: Prof. Chao Peng
   gpa: 89.68/100
   contributions:
@@ -16,11 +16,11 @@
   - Federate Learning Discussion and Seminar from 09/2020 to 01/2021
   - Grad Essays for Sound Project
 - id: under
-  logo: "/images/sei-under.png" 
+  logo: "../images/sei-under.png" 
   school: 华东师范大学
   department: 计算机科学与软件工程学院
   location: Shanghai, China
-  time: 2016.09-2020.08
+  time: 2016.09-2020.06
   major: Bachelor of Engineering
   direction: 软件工程专业 软件科学与技术方向
   advisor: Prof. Yongxin Zhao

@@ -1,11 +1,11 @@
 myname: 吴文翰
-address: 上海市普陀区中山北路3663号理科大楼B1008
+address: 上海市（接受海外 relocation）
 tel: 18516523459
 wechat: 18516523459 (Ww_fte)
 qq: 1020645987
 email: whwu17@foxmail.com
 birthday: 1998/08/17
-siteurl: http://ivyee17.github.io/
+siteurl: https://whwu17.github.io/
 city: 上海
 lang: zh # default cn. For any other string is en.
 cert:
@@ -22,6 +22,6 @@ cert:
 - name: Driving License
   level: C2
 - name: Passport
-  level: 2026-06-15 Expired
+  level: Valid (renewed 2026)
 - name: NTCE
   level: 高中信息技术

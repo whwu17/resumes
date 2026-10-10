@@ -1,8 +1,78 @@
+work:
+- title: "Stress 2.0 · Trade Wind Down（TWD）压力测试数据链路"
+  time: "2024.01 - 至今"
+  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+  position: "Analyst (Senior Software Development)"
+  content:
+  - "负责 TWD 压力测试链路的 Python 侧：从 UDW、Prism（ActivePivot 风险数据仓库）、市场数据与 Excel 输入多源取数（MDX / REST / Dremio SQL / 文件导出），完成 Data Object 与 Scenario 领域建模、后处理与落盘，单批约 800 MB（4 类 scenario × ~200 MB）。"
+  - "主导数据源切换，与业务方完成 UAT 验收。"
+  - "基于 Fingal 计算框架实现部分压力因子计算（含 CS01）；作为 ComputeGrid 调用方对接外部计算引擎，准备输入、回收结果。"
+  - "重构 TWD 领域模型：data object 的 skid 统一为 identifier，消除对象重复创建；版本递增抽象为独立方法，保证各处版本语义一致。"
+  - "主导 MinIO 对象存储层改造：重新设计存储布局，实现文件删除、体积统计、上传数量校验，明确重复文件覆盖写语义，空输入文件快速失败并明确报错；按对象存储特性优化访问路径，避开高开销的 ListObjects。"
+  - "建设测试与变更证据：transactional 测试自动回滚，Spring test 全路径覆盖，为 miniosync / propstore / maestrologger 补测试并产出满足变更管控的 testing evidence。"
+  - "基于 Prefect 编排 daily-stress 批任务，补齐 special task 与下游 lynx task 的 wait-for 依赖；担任 Maestro 事件监控系统（事件发生与接收）lead，负责代码评审、改进与验收。"
+  - "推动 CI 类型校验支持 SQL Server 的 BITS / LONGNVARCHAR 类型。"
+  - "熟练掌握 AI 辅助开发：Claude Code 日常用于重构、测试生成、分支合并、新旧数据源比对、最小化单测复现 debug、报障分析。"
+
+- title: "风控 PnL 与 NM CVA 计算引擎（Full Revaluation and Non-Managed CVA Calculation Process）"
+  time: "2023 - 2025"
+  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+  position: "Analyst (Senior Software Development)"
+  content:
+  - "担任 NM CVA 模块 lead：主导需求、开发与生产上线，负责上线后的生产支持。"
+  - "基于 Prefect 构建压力情景下的风险损益与 NM CVA 计算流程，用于指导交易决策；每笔交易在节点内计算，预处理与 ComputeGrid（蒙特卡洛）两端高度并行。"
+  - "整合 ActivePivot（Prism）风险数据、交易信息与市场数据，结果写入 Dremio 与 AWS S3，交付下游 UI 团队。"
+  - "设计并实现基于事件的监听器使流程自动化；生产环境支持，开发环境调试与持续监控。为全部输入设计按项目隔离的缓存目录结构；用 Lynx SCE 提取多维风险信息。"
+  - "运行日本 CVA 批次并跨地区聚合结果；解决读写冲突的并发问题且保留并行度，限制任务并行度避免长时间等待。"
+  - "重构过滤逻辑以兼容更多过滤器；按合规要求配置排除项与类型变更。用 Django 将结果以 Web 服务暴露，供用户获取目标文件。"
+
+- title: "Scenario Extractor · Risk Data Endpoint（RDE）"
+  time: "lead"
+  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+  position: "Analyst (Senior Software Development)"
+  content:
+  - "担任 Scenario Extractor lead：生成压力情景数据，并通过 Risk Data Endpoint（RDE）接口直接暴露给前端 UI 用户查询；直接对接 Risk Management 业务方收集需求、确定方案并主导上线。"
+
+- title: "市场数据 Python ETL 框架解析工具"
+  time: "2023 - 2024"
+  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+  position: "Analyst (Senior Software Development)"
+  content:
+  - "聚合多 vendor 市场数据，提取各计算模型所需的市场风险数据；对照公共模块与定制模型优化代码逻辑。通过线上日志与 Dremio 定位并解决线上解析问题，与其他部门协作排查根因。"
+  - "监听 ETL 信号量驱动对应模型；常用接口二次封装为 FastAPI；用 Status ID 解决模型调用耗时过长导致的阻塞与多进程并发问题。"
+  - "处理 FastAPI 大数据量下的内存泄漏 / OOM：权限控制加 Gunicorn 重启机制；处理 log rotating 下模型读不到日志的问题。"
+  - "将 ETL 整体迁移至 AWS，配置改为 YAML，用 systemd 与 Jenkins 触发自动部署；上线后检查与支持。"
+
+- title: "基于 Java 的场景解析与 PnL 执行工具"
+  time: "2023 - 2024"
+  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+  position: "Analyst (Senior Software Development)"
+  content:
+  - "设计并开发基于 RESTful API 的市场场景解析与 PnL 执行工具，按实际场景与风险类型建模，预估市场行为的潜在风险。通过缓存与多线程设计让 UI 更快得到响应。"
+  - "设计并测试场景在不同状态间的转移与依赖，维护数据库一致性，用集成测试保证状态转换正确。"
+  - "按 Agile / Scrum 走完需求、开发设计、QA、UAT，并为各环节人员提供技术支持。"
+
+- title: "ServiceNow 灾备（Disaster Recovery）"
+  time: "2023 - 2024"
+  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+  position: "Analyst (Senior Software Development)"
+  content:
+  - "把按部门分散管理的灾备收成同一项目内的集中管理；基于 ServiceNow Engine，提高开发效率、降低跨部门学习成本。"
+  - "从 Excel 灾备流程中提炼流程，设计 ServiceNow 的 Data、Form、Flow，并开发看板与流程管理。"
+
+- title: "Lynx 交易数据 ETL 模块"
+  time: "2023.06 - 2023.12"
+  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+  position: "Analyst (Senior Software Development)"
+  content:
+  - "负责 Lynx 模块对上游交易数据（trade data）的 ETL 与分析：数据库配置、按业务规则的增删改查、REST API 迁移。"
+  - "完成 Lynx 1.0 → 2.0 的兼容性升级，保证上下游在版本切换期间不中断。"
+
 internship:
-- title: "Pre-approval System for AEJ Travel and Ground Transportation"
+- title: "Pre-approval System for AEJ Travel and Ground Transportation（差旅报销审批系统）"
   time: "2022.07 - 2022.08"
-  company: "Nomura Holdings, Inc."
-  position: "GIS开发工程师"
+  company: "Nomura Holdings, Inc. · Global Infrastructure Services (GIS)"
+  position: "GIS 开发实习生 (Summer Intern)"
   content:
   - 基于Java(SpringBoot)和Javascript(React)的审批系统开发与实现，采用JPA对MySQL进行配置。
   - 本人负责前端页面整体重构（组件化），包括对现有组件的抽象和封装，以利用组件复用机制对代码逻辑进行简化。同时，本人负责后端接口定义、基于Csv的Excel表单输出（包括对重复字段的设计与代码编写）与数据同步及数据库字段设计。

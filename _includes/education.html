@@ -33,7 +33,7 @@
               <h6><strong>{{el.time}}</strong> </h6>
               <h5><strong>{{el.major}} </strong></h5>
               {%if el.note %}
-              <i>In progress</i>
+              <i>{{ el.note }}</i>
               {%endif%}
               <div class="dropdown-divider mb-4"></div>
               {% if el.id == 'post' %}

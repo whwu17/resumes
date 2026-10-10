@@ -48,14 +48,13 @@
             style="margin-bottom: -30px;" data-aos="fade-up" >
               <p><b>{{h.time}}</b></p>
               <h5>{{h.content}}</h5>
-              {%if soc.details%}
+              {%if h.details%}
               <ul>
                 {%for c in h.details%}
                 <li>{{c}}</li>
                 {% endfor %}
               </ul>
               {%endif%}
-              </p>
             </div>
             {%endfor%}
             </div>
