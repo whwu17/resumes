@@ -7,14 +7,20 @@ work:
   - 'Owned the Python side of the TWD project: ingested data from UDW, Prism (ActivePivot-based risk data warehouse), market data and Excel inputs via MDX / REST / Dremio SQL / file export; built Data Object and Scenario domain models, post-processing and persistence; ~800 MB per run (4 scenario types × ~200 MB).'
   - Led data-source migrations through business UAT sign-off.
   - Implemented stress-factor calculations (incl. CS01) on the Fingal computation framework; integrated with the compute grid as a consumer, preparing inputs and collecting results.
-  - 'Used MinIO as S3-compatible object storage. Studied which calls are expensive (such as ListObjects) and which are cheap, and moved access from high cost to low cost.'
-  - 'Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies. Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
+  - 'Persisted to MinIO (S3-compatible object storage); studied the cost of each call, avoided expensive paths such as ListObjects, and moved access to cheaper ones.'
+  - Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies.
+  - 'Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
   - Worked around a small CI type-check bug for SQL Server BITS / LONGNVARCHAR; did not change the type checker.
   - 'Proficient in AI-assisted development: Claude Code for old-vs-new data-source comparison, script and test generation, and incident analysis.'
+- title: TWD side projects
+  time: 2024 - present
+  company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+  position: Analyst, Senior Software Developer
+  content:
   - 'Scenario Extractor: generated stress-scenario data and served it through the Risk Data Endpoint.'
   - 'Hedges Composer Tool (HCT): extracted Hedges P&L and calculated P&L at different Trade Wind Down times.'
   - 'RSST: defined stress and TWD scenarios in SDL.'
-  - 'Investigated a bug in Lynx parquet file reads.'
+  - 'Investigated a bug in Lynx parquet file generation and reads.'
 - title: Market Data Python ETL Framework Parsing Tool
   time: 2023 - 2024
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology

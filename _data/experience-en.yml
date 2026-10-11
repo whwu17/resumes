@@ -7,14 +7,20 @@ work:
   - 'Owned the Python side of the TWD project: ingested data from UDW, Prism (ActivePivot-based risk data warehouse), market data and Excel inputs via MDX / REST / Dremio SQL / file export; built Data Object and Scenario domain models, post-processing and persistence; ~800 MB per run (4 scenario types × ~200 MB).'
   - Implemented stress-factor calculations (incl. CS01) on the Fingal computation framework; integrated with the compute grid as a consumer, preparing inputs for the external calculation engine and collecting results.
   - 'Refactored the TWD domain model: replaced data-object skid with a unified identifier to eliminate redundant object creation; extracted version-increment logic into one method so version semantics stay consistent across TWD.'
-  - 'Used MinIO as S3-compatible object storage. Studied which calls are expensive (such as ListObjects) and which are cheap, and moved access from high cost to low cost.'
+  - 'Persisted to MinIO (S3-compatible object storage); studied the cost of each call, avoided expensive paths such as ListObjects, and moved access to cheaper ones.'
   - 'Built test coverage and change evidence: transactional tests with automatic rollback, full-path Spring test coverage, new tests plus change-control testing evidence for miniosync, propstore and maestrologger.'
-  - 'Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies for special tasks and the downstream lynx task. Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
+  - Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies for special tasks and the downstream lynx task.
+  - 'Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
   - 'Proficient in AI-assisted development: Claude Code used daily for refactoring, test generation, branch merging, old-vs-new data-source comparison, minimal reproductions and incident analysis.'
+- title: TWD side projects
+  time: 2024 - present
+  company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+  position: Analyst, Senior Software Developer
+  content:
   - 'Scenario Extractor: generated stress-scenario data and served it through the Risk Data Endpoint.'
   - 'Hedges Composer Tool (HCT): extracted Hedges P&L and calculated P&L at different Trade Wind Down times.'
   - 'RSST: defined stress and TWD scenarios in SDL.'
-  - 'Investigated a bug in Lynx parquet file reads.'
+  - 'Investigated a bug in Lynx parquet file generation and reads.'
 - title: Full Revaluation and Non-Managed CVA Calculation Process
   time: 2023 - 2025
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
