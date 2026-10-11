@@ -1,0 +1,356 @@
+diff --git a/_data/experience-data-en.yml b/_data/experience-data-en.yml
+index ac6b098..73aaa3f 100644
+--- a/_data/experience-data-en.yml
++++ b/_data/experience-data-en.yml
+@@ -1,20 +1,30 @@
+ work:
+-- title: Stress 2.0 — Trade Wind Down (TWD) Data Pipeline
++- title: Stress 2.0 — Trade Wind Down (TWD)
+   time: 2024.01 - present
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+-  - 'Owned the Python side of the TWD pipeline: ingested data from UDW, Prism (ActivePivot-based risk data warehouse), market data and Excel inputs via MDX / REST / Dremio SQL / file export; built Data Object and Scenario domain models, post-processing and persistence; ~800 MB per run (4 scenario types × ~200 MB).'
++  - 'Owned the Python side of the TWD project: ingested data from UDW, Prism (ActivePivot-based risk data warehouse), market data and Excel inputs via MDX / REST / Dremio SQL / file export; built Data Object and Scenario domain models, post-processing and persistence; ~800 MB per run (4 scenario types × ~200 MB).'
+   - Led data-source migrations through business UAT sign-off.
+   - Implemented stress-factor calculations (incl. CS01) on the Fingal computation framework; integrated with the compute grid as a consumer, preparing inputs and collecting results.
+-  - 'Led the MinIO object-storage redesign: new storage layout, file deletion and size accounting, upload-count validation, explicit overwrite semantics for duplicate files, fail-fast on empty inputs; optimised access patterns to avoid costly ListObjects calls.'
+-  - Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies; lead for Maestro, the event-monitoring system, owning code review, improvements and sign-off.
+-  - Drove CI type validation support for SQL Server BITS / LONGNVARCHAR types.
++  - 'Persisted to MinIO (S3-compatible object storage); studied the cost of each call, avoided expensive paths such as ListObjects, and moved access to cheaper ones.'
++  - Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies.
++  - 'Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
++  - Worked around a small CI type-check bug for SQL Server BITS / LONGNVARCHAR; did not change the type checker.
+   - 'Proficient in AI-assisted development: Claude Code for old-vs-new data-source comparison, script and test generation, and incident analysis.'
++- title: TWD side projects
++  time: 2024 - present
++  company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
++  position: Analyst, Senior Software Developer
++  content:
++  - 'Scenario Extractor: generated stress-scenario data and served it through the Risk Data Endpoint.'
++  - 'Hedges Composer Tool (HCT): extracted Hedges P&L and calculated P&L at different Trade Wind Down times.'
++  - 'RSST: defined stress and TWD scenarios in SDL.'
++  - 'Investigated a bug in Lynx parquet file generation and reads.'
+ - title: Market Data Python ETL Framework Parsing Tool
+   time: 2023 - 2024
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+   - Aggregated multi-vendor market data and extracted the market-risk inputs each calculation model needs; optimised code paths across shared modules and custom models.
+   - Traced and fixed production parsing issues through logs and Dremio, working with other departments on root cause.
+@@ -23,23 +33,17 @@ work:
+ - title: Full Revaluation and Non-Managed CVA Calculation Process
+   time: 2023 - 2025
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+-  - 'Lead for the NM CVA module: owned requirements, delivery and production releases, plus post-release production support.'
++  - 'Lead for non-managed CVA: requirements, delivery, production release and post-release support.'
+   - Combined ActivePivot (Prism) risk data with trade and market data; persisted results to Dremio and AWS S3 for the downstream UI team.
+   - Built the Prefect pipeline that produces risk P/L and non-managed CVA under each stress scenario; per-trade calculation inside nodes, with high parallelism in pre-processing and the Monte Carlo ComputeGrid service.
+   - Designed a cache folder structure that isolates inputs per project; extracted multi-dimensional risk data with Lynx SCE.
+   - Ran Japan CVA batches and aggregated results across regions; resolved read/write conflicts without losing parallelism.
+-- title: Scenario Extractor · Risk Data Endpoint (RDE)
+-  time: lead
+-  company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
+-  content:
+-  - 'Lead for the Scenario Extractor: generated stress-scenario data and exposed it to front-end UI users through the Risk Data Endpoint API; worked directly with Risk Management on requirements and design and owned the production release.'
+ - title: Lynx Trade-Data ETL Module
+   time: 2023.06 - 2023.12
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+   - 'Owned ETL and analysis of upstream trade data: database configuration, business-rule CRUD and REST API migration.'
+   - Delivered the Lynx 1.0 → 2.0 compatibility upgrade so upstream and downstream kept running through the version switch.
+diff --git a/_data/experience-data.yml b/_data/experience-data.yml
+index 6a53ee6..efccb1d 100644
+--- a/_data/experience-data.yml
++++ b/_data/experience-data.yml
+@@ -1,52 +1,55 @@
+ work:
+-- title: "Stress 2.0 · Trade Wind Down（TWD）数据链路"
++- title: "Stress 2.0 · Trade Wind Down（TWD）"
+   time: "2024.01 - 至今"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+-  - "负责 TWD Stress 2.0 链路的 Python 侧：从 UDW、Prism（ActivePivot 风险数据仓库）、市场数据与 Excel 输入多源取数（MDX / REST / Dremio SQL / 文件导出），完成 Data Object 与 Scenario 领域建模、后处理与落盘，单批约 800 MB（4 类 scenario × ~200 MB）。"
++  - "负责 TWD Stress 2.0 项目的 Python 侧：从 UDW、Prism（ActivePivot 风险数据仓库）、市场数据与 Excel 输入多源取数（MDX / REST / Dremio SQL / 文件导出），完成 Data Object 与 Scenario 领域建模、后处理与落盘，单批约 800 MB（4 类 scenario × ~200 MB）。"
+   - "主导数据源切换，与业务方完成 UAT 验收。"
+   - "基于 Fingal 计算框架实现部分压力因子计算（含 CS01）；作为 ComputeGrid 调用方对接外部计算引擎，准备输入、回收结果。"
+   - "重构 TWD 领域模型：data object 的 skid 统一为 identifier，消除对象重复创建；版本递增抽象为独立方法，保证各处版本语义一致。"
+-  - "主导 MinIO 对象存储层改造：重新设计存储布局，实现文件删除、体积统计、上传数量校验，明确重复文件覆盖写语义，空输入文件快速失败并明确报错；按对象存储特性优化访问路径，避开高开销的 ListObjects。"
++  - "以 MinIO（S3 兼容对象存储）落盘；调查各类调用的开销，避开 ListObjects 等高成本路径，改走低成本访问。"
+   - "建设测试与变更证据：transactional 测试自动回滚，Spring test 全路径覆盖，为 miniosync / propstore / maestrologger 补测试并产出满足变更管控的 testing evidence。"
+-  - "基于 Prefect 编排 daily-stress 批任务，补齐 special task 与下游 lynx task 的 wait-for 依赖；担任 Maestro 事件监控系统（事件发生与接收）lead，负责代码评审、改进与验收。"
+-  - "推动 CI 类型校验支持 SQL Server 的 BITS / LONGNVARCHAR 类型。"
++  - "基于 Prefect 编排 daily-stress 批任务，补齐 special task 与下游 lynx task 的 wait-for 依赖，修复任务时序。"
++  - "担任 Maestro communication 的 lead：在 forward valuation（non-managed CVA）范围内，对接事件的发送与接收。"
++  - "CI 类型检查里 SQL Server 的 BITS / LONGNVARCHAR 有一个小 bug，用 workaround 兼容，没有改类型检查本身。"
+   - "熟练掌握 AI 辅助开发：Claude Code 日常用于重构、测试生成、分支合并、新旧数据源比对、最小化单测复现 debug、报障分析。"
+ 
++- title: "TWD 周边项目"
++  time: "2024 - 至今"
++  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
++  position: "Analyst (Senior Software Developer)"
++  content:
++  - "Scenario Extractor：生成压力情景数据，经 Risk Data Endpoint 供前端查询。"
++  - "Hedges Composer Tool（HCT）：提取 Hedges 的 P&L，并计算不同 Trade Wind Down 时间下的 P&L。"
++  - "RSST：用 SDL 定义 Stress 场景和 TWD 场景。"
++  - "排查 Lynx parquet 文件生成与读取的 bug。"
+ - title: "市场数据 Python ETL 框架解析工具"
+   time: "2023 - 2024"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+   - "聚合多 vendor 市场数据，提取各计算模型所需的市场风险数据；对照公共模块与定制模型优化代码逻辑。通过线上日志与 Dremio 定位并解决线上解析问题，与其他部门协作排查根因。"
+   - "监听 ETL 信号量驱动对应模型；常用接口二次封装为 FastAPI；用 Status ID 解决模型调用耗时过长导致的阻塞与多进程并发问题。"
+   - "处理 FastAPI 大数据量下的内存泄漏 / OOM：权限控制加 Gunicorn 重启机制；处理 log rotating 下模型读不到日志的问题。"
+   - "将 ETL 整体迁移至 AWS，配置改为 YAML，用 systemd 与 Jenkins 触发自动部署；上线后检查与支持。"
+ 
+-- title: "风控 PnL 与 NM CVA 计算引擎（Full Revaluation and Non-Managed CVA Calculation Process）"
++- title: "Full Revaluation 与 Non-Managed CVA 计算（Full Revaluation and Non-Managed CVA Calculation Process）"
+   time: "2023 - 2025"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+-  - "担任 NM CVA 模块 lead：主导需求、开发与生产上线，负责上线后的生产支持。"
++  - "担任 non-managed CVA 的 lead：需求、开发、上线与上线后的生产支持。"
+   - "基于 Prefect 构建压力情景下的风险损益与 NM CVA 计算流程，用于指导交易决策；每笔交易在节点内计算，预处理与 ComputeGrid（蒙特卡洛）两端高度并行。"
+   - "整合 ActivePivot（Prism）风险数据、交易信息与市场数据，结果写入 Dremio 与 AWS S3，交付下游 UI 团队。"
+   - "设计并实现基于事件的监听器使流程自动化；生产环境支持，开发环境调试与持续监控。为全部输入设计按项目隔离的缓存目录结构；用 Lynx SCE 提取多维风险信息。"
+   - "运行日本 CVA 批次并跨地区聚合结果；解决读写冲突的并发问题且保留并行度，限制任务并行度避免长时间等待。"
+   - "重构过滤逻辑以兼容更多过滤器；按合规要求配置排除项与类型变更。用 Django 将结果以 Web 服务暴露，供用户获取目标文件。"
+ 
+-- title: "Scenario Extractor · Risk Data Endpoint（RDE）"
+-  time: "lead"
+-  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
+-  content:
+-  - "担任 Scenario Extractor lead：生成压力情景数据，并通过 Risk Data Endpoint（RDE）接口直接暴露给前端 UI 用户查询；直接对接 Risk Management 业务方收集需求、确定方案并主导上线。"
+-
+ - title: "Lynx 交易数据 ETL 模块"
+   time: "2023.06 - 2023.12"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+   - "负责 Lynx 模块对上游交易数据（trade data）的 ETL 与分析：数据库配置、按业务规则的增删改查、REST API 迁移。"
+   - "完成 Lynx 1.0 → 2.0 的兼容性升级，保证上下游在版本切换期间不中断。"
+@@ -118,9 +121,6 @@ projects:
+   content:
+   - 课程作业。基于Python语言实现，描述PCA、KNN、核函数下对MNIST数据集的训练模型。
+ 
+-
+-
+-
+ outcomes:
+ - title: "Tencent WeOpen Star Contributor (No. 0020)"
+   time: "2022.05 - 2022.06"
+@@ -150,4 +150,3 @@ outcomes:
+   place: "登记号：2020SR0651562"
+   details: "基于自动重构技术的软件复杂度降解平台（SRT V1.0）"
+ 
+-
+diff --git a/_data/experience-en.yml b/_data/experience-en.yml
+index 7f48807..13b1a4a 100644
+--- a/_data/experience-en.yml
++++ b/_data/experience-en.yml
+@@ -1,37 +1,41 @@
+ work:
+-- title: Stress 2.0 — Trade Wind Down (TWD) Data Pipeline
++- title: Stress 2.0 — Trade Wind Down (TWD)
+   time: 2024.01 - present
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+-  - 'Owned the Python side of the TWD pipeline: ingested data from UDW, Prism (ActivePivot-based risk data warehouse), market data and Excel inputs via MDX / REST / Dremio SQL / file export; built Data Object and Scenario domain models, post-processing and persistence; ~800 MB per run (4 scenario types × ~200 MB).'
++  - 'Owned the Python side of the TWD project: ingested data from UDW, Prism (ActivePivot-based risk data warehouse), market data and Excel inputs via MDX / REST / Dremio SQL / file export; built Data Object and Scenario domain models, post-processing and persistence; ~800 MB per run (4 scenario types × ~200 MB).'
+   - Implemented stress-factor calculations (incl. CS01) on the Fingal computation framework; integrated with the compute grid as a consumer, preparing inputs for the external calculation engine and collecting results.
+   - 'Refactored the TWD domain model: replaced data-object skid with a unified identifier to eliminate redundant object creation; extracted version-increment logic into one method so version semantics stay consistent across TWD.'
+-  - 'Led the MinIO object-storage redesign: new storage layout, file deletion and size accounting, upload-count validation, explicit overwrite semantics for duplicate files, fail-fast with clear errors for empty inputs; optimised access patterns to avoid costly ListObjects calls.'
++  - 'Persisted to MinIO (S3-compatible object storage); studied the cost of each call, avoided expensive paths such as ListObjects, and moved access to cheaper ones.'
+   - 'Built test coverage and change evidence: transactional tests with automatic rollback, full-path Spring test coverage, new tests plus change-control testing evidence for miniosync, propstore and maestrologger.'
+-  - 'Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies for special tasks and the downstream lynx task. Lead for Maestro, the event-monitoring system: code review, improvements and sign-off.'
++  - Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies for special tasks and the downstream lynx task.
++  - 'Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
+   - 'Proficient in AI-assisted development: Claude Code used daily for refactoring, test generation, branch merging, old-vs-new data-source comparison, minimal reproductions and incident analysis.'
++- title: TWD side projects
++  time: 2024 - present
++  company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
++  position: Analyst, Senior Software Developer
++  content:
++  - 'Scenario Extractor: generated stress-scenario data and served it through the Risk Data Endpoint.'
++  - 'Hedges Composer Tool (HCT): extracted Hedges P&L and calculated P&L at different Trade Wind Down times.'
++  - 'RSST: defined stress and TWD scenarios in SDL.'
++  - 'Investigated a bug in Lynx parquet file generation and reads.'
+ - title: Full Revaluation and Non-Managed CVA Calculation Process
+   time: 2023 - 2025
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+-  - 'Lead for the NM CVA module: owned requirements, delivery and production releases, plus post-release production support.'
++  - 'Lead for non-managed CVA: requirements, delivery, production release and post-release support.'
+   - Built the Prefect pipeline that produces risk P/L and non-managed CVA under each stress scenario to guide trading decisions; per-trade calculation inside nodes, with high parallelism in both pre-processing and the Monte Carlo ComputeGrid service.
+   - Combined ActivePivot (Prism) risk data with trade and market data; persisted results to Dremio and AWS S3 for the downstream UI team.
+   - Designed an event-based listener to automate the pipeline; production support plus development-environment debugging and continuous monitoring.
+   - Ran Japan CVA batches and aggregated results across regions; resolved read/write conflicts without losing parallelism and capped task parallelism to avoid long waits.
+   - Refactored filter logic to accept more filters; configured exclusions and type changes for compliance.
+-- title: Scenario Extractor · Risk Data Endpoint (RDE)
+-  time: lead
+-  company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
+-  content:
+-  - 'Lead for the Scenario Extractor: generated stress-scenario data and exposed it to front-end UI users through the Risk Data Endpoint API; worked directly with Risk Management on requirements and design and owned the production release.'
+ - title: Market Data Python ETL Framework Parsing Tool
+   time: 2023 - 2024
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+   - Aggregated multi-vendor market data and extracted the market-risk inputs each calculation model needs; optimised code paths across shared modules and custom models.
+   - Traced and fixed production parsing issues through logs and Dremio, working with other departments on root cause.
+@@ -41,7 +45,7 @@ work:
+ - title: Java Scenario Service Analysis and P/L Tool
+   time: 2023 - 2024
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+   - Designed and built REST APIs for a scenario-analysis and P/L execution tool, modelled on real market scenarios and risk types.
+   - Caching and multi-threading so the UI gets responses faster.
+@@ -49,14 +53,14 @@ work:
+ - title: ServiceNow Disaster Recovery
+   time: 2023 - 2024
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+   - Replaced department-by-department DR management with one ServiceNow Engine project across departments.
+   - Distilled the Excel DR process into ServiceNow Data, Form and Flow, plus Kanban and process management.
+ - title: Lynx Trade-Data ETL Module
+   time: 2023.06 - 2023.12
+   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
+-  position: Analyst, Senior Software Development
++  position: Analyst, Senior Software Developer
+   content:
+   - 'Owned ETL and analysis of upstream trade data: database configuration, business-rule CRUD and REST API migration.'
+   - Delivered the Lynx 1.0 → 2.0 compatibility upgrade so upstream and downstream kept running through the version switch.
+diff --git a/_data/experience.yml b/_data/experience.yml
+index a7901d3..bb0aab1 100644
+--- a/_data/experience.yml
++++ b/_data/experience.yml
+@@ -1,42 +1,45 @@
+ work:
+-- title: "Stress 2.0 · Trade Wind Down（TWD）数据链路"
++- title: "Stress 2.0 · Trade Wind Down（TWD）"
+   time: "2024.01 - 至今"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+-  - "负责 TWD Stress 2.0 链路的 Python 侧：从 UDW、Prism（ActivePivot 风险数据仓库）、市场数据与 Excel 输入多源取数（MDX / REST / Dremio SQL / 文件导出），完成 Data Object 与 Scenario 领域建模、后处理与落盘，单批约 800 MB（4 类 scenario × ~200 MB）。"
++  - "负责 TWD Stress 2.0 项目的 Python 侧：从 UDW、Prism（ActivePivot 风险数据仓库）、市场数据与 Excel 输入多源取数（MDX / REST / Dremio SQL / 文件导出），完成 Data Object 与 Scenario 领域建模、后处理与落盘，单批约 800 MB（4 类 scenario × ~200 MB）。"
+   - "主导数据源切换，与业务方完成 UAT 验收。"
+   - "基于 Fingal 计算框架实现部分压力因子计算（含 CS01）；作为 ComputeGrid 调用方对接外部计算引擎，准备输入、回收结果。"
+   - "重构 TWD 领域模型：data object 的 skid 统一为 identifier，消除对象重复创建；版本递增抽象为独立方法，保证各处版本语义一致。"
+-  - "主导 MinIO 对象存储层改造：重新设计存储布局，实现文件删除、体积统计、上传数量校验，明确重复文件覆盖写语义，空输入文件快速失败并明确报错；按对象存储特性优化访问路径，避开高开销的 ListObjects。"
++  - "以 MinIO（S3 兼容对象存储）落盘；调查各类调用的开销，避开 ListObjects 等高成本路径，改走低成本访问。"
+   - "建设测试与变更证据：transactional 测试自动回滚，Spring test 全路径覆盖，为 miniosync / propstore / maestrologger 补测试并产出满足变更管控的 testing evidence。"
+-  - "基于 Prefect 编排 daily-stress 批任务，补齐 special task 与下游 lynx task 的 wait-for 依赖；担任 Maestro 事件监控系统（事件发生与接收）lead，负责代码评审、改进与验收。"
+-  - "推动 CI 类型校验支持 SQL Server 的 BITS / LONGNVARCHAR 类型。"
++  - "基于 Prefect 编排 daily-stress 批任务，补齐 special task 与下游 lynx task 的 wait-for 依赖，修复任务时序。"
++  - "担任 Maestro communication 的 lead：在 forward valuation（non-managed CVA）范围内，对接事件的发送与接收。"
++  - "CI 类型检查里 SQL Server 的 BITS / LONGNVARCHAR 有一个小 bug，用 workaround 兼容，没有改类型检查本身。"
+   - "熟练掌握 AI 辅助开发：Claude Code 日常用于重构、测试生成、分支合并、新旧数据源比对、最小化单测复现 debug、报障分析。"
+ 
+-- title: "风控 PnL 与 NM CVA 计算引擎（Full Revaluation and Non-Managed CVA Calculation Process）"
++- title: "TWD 周边项目"
++  time: "2024 - 至今"
++  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
++  position: "Analyst (Senior Software Developer)"
++  content:
++  - "Scenario Extractor：生成压力情景数据，经 Risk Data Endpoint 供前端查询。"
++  - "Hedges Composer Tool（HCT）：提取 Hedges 的 P&L，并计算不同 Trade Wind Down 时间下的 P&L。"
++  - "RSST：用 SDL 定义 Stress 场景和 TWD 场景。"
++  - "排查 Lynx parquet 文件生成与读取的 bug。"
++- title: "Full Revaluation 与 Non-Managed CVA 计算（Full Revaluation and Non-Managed CVA Calculation Process）"
+   time: "2023 - 2025"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+-  - "担任 NM CVA 模块 lead：主导需求、开发与生产上线，负责上线后的生产支持。"
++  - "担任 non-managed CVA 的 lead：需求、开发、上线与上线后的生产支持。"
+   - "基于 Prefect 构建压力情景下的风险损益与 NM CVA 计算流程，用于指导交易决策；每笔交易在节点内计算，预处理与 ComputeGrid（蒙特卡洛）两端高度并行。"
+   - "整合 ActivePivot（Prism）风险数据、交易信息与市场数据，结果写入 Dremio 与 AWS S3，交付下游 UI 团队。"
+   - "设计并实现基于事件的监听器使流程自动化；生产环境支持，开发环境调试与持续监控。为全部输入设计按项目隔离的缓存目录结构；用 Lynx SCE 提取多维风险信息。"
+   - "运行日本 CVA 批次并跨地区聚合结果；解决读写冲突的并发问题且保留并行度，限制任务并行度避免长时间等待。"
+   - "重构过滤逻辑以兼容更多过滤器；按合规要求配置排除项与类型变更。用 Django 将结果以 Web 服务暴露，供用户获取目标文件。"
+ 
+-- title: "Scenario Extractor · Risk Data Endpoint（RDE）"
+-  time: "lead"
+-  company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
+-  content:
+-  - "担任 Scenario Extractor lead：生成压力情景数据，并通过 Risk Data Endpoint（RDE）接口直接暴露给前端 UI 用户查询；直接对接 Risk Management 业务方收集需求、确定方案并主导上线。"
+-
+ - title: "市场数据 Python ETL 框架解析工具"
+   time: "2023 - 2024"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+   - "聚合多 vendor 市场数据，提取各计算模型所需的市场风险数据；对照公共模块与定制模型优化代码逻辑。通过线上日志与 Dremio 定位并解决线上解析问题，与其他部门协作排查根因。"
+   - "监听 ETL 信号量驱动对应模型；常用接口二次封装为 FastAPI；用 Status ID 解决模型调用耗时过长导致的阻塞与多进程并发问题。"
+@@ -46,7 +49,7 @@ work:
+ - title: "基于 Java 的场景解析与 PnL 执行工具"
+   time: "2023 - 2024"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+   - "设计并开发基于 RESTful API 的市场场景解析与 PnL 执行工具，按实际场景与风险类型建模，预估市场行为的潜在风险。通过缓存与多线程设计让 UI 更快得到响应。"
+   - "设计并测试场景在不同状态间的转移与依赖，维护数据库一致性，用集成测试保证状态转换正确。"
+@@ -55,7 +58,7 @@ work:
+ - title: "ServiceNow 灾备（Disaster Recovery）"
+   time: "2023 - 2024"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+   - "把按部门分散管理的灾备收成同一项目内的集中管理；基于 ServiceNow Engine，提高开发效率、降低跨部门学习成本。"
+   - "从 Excel 灾备流程中提炼流程，设计 ServiceNow 的 Data、Form、Flow，并开发看板与流程管理。"
+@@ -63,7 +66,7 @@ work:
+ - title: "Lynx 交易数据 ETL 模块"
+   time: "2023.06 - 2023.12"
+   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
+-  position: "Analyst (Senior Software Development)"
++  position: "Analyst (Senior Software Developer)"
+   content:
+   - "负责 Lynx 模块对上游交易数据（trade data）的 ETL 与分析：数据库配置、按业务规则的增删改查、REST API 迁移。"
+   - "完成 Lynx 1.0 → 2.0 的兼容性升级，保证上下游在版本切换期间不中断。"
+@@ -163,8 +166,6 @@ projects:
+   - 本人前期为项目负责人，负责项目创意设计及计划；后期负责标签功能原型设计、开发与实现。
+   - 项目中期获得华东师范大学国家级创新创业项目，并顺利结项。
+ 
+-
+-
+ outcomes:
+ - title: "Tencent WeOpen Star Contributor (No. 0020)"
+   time: "2022.05 - 2022.06"
+@@ -198,4 +199,3 @@ outcomes:
+   place: "登记号：2020SR0651562"
+   details: "基于自动重构技术的软件复杂度降解平台（SRT V1.0）"
+ 
+-
