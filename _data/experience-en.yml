@@ -1,37 +1,35 @@
 work:
-- title: Stress 2.0 — Trade Wind Down (TWD) Data Pipeline
+- title: Stress 2.0 — Trade Wind Down (TWD)
   time: 2024.01 - present
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
-  position: Analyst, Senior Software Development
+  position: Analyst, Senior Software Developer
   content:
-  - 'Owned the Python side of the TWD pipeline: ingested data from UDW, Prism (ActivePivot-based risk data warehouse), market data and Excel inputs via MDX / REST / Dremio SQL / file export; built Data Object and Scenario domain models, post-processing and persistence; ~800 MB per run (4 scenario types × ~200 MB).'
+  - 'Owned the Python side of the TWD project: ingested data from UDW, Prism (ActivePivot-based risk data warehouse), market data and Excel inputs via MDX / REST / Dremio SQL / file export; built Data Object and Scenario domain models, post-processing and persistence; ~800 MB per run (4 scenario types × ~200 MB).'
   - Implemented stress-factor calculations (incl. CS01) on the Fingal computation framework; integrated with the compute grid as a consumer, preparing inputs for the external calculation engine and collecting results.
   - 'Refactored the TWD domain model: replaced data-object skid with a unified identifier to eliminate redundant object creation; extracted version-increment logic into one method so version semantics stay consistent across TWD.'
-  - 'Led the MinIO object-storage redesign: new storage layout, file deletion and size accounting, upload-count validation, explicit overwrite semantics for duplicate files, fail-fast with clear errors for empty inputs; optimised access patterns to avoid costly ListObjects calls.'
+  - 'Used MinIO as S3-compatible object storage. Studied which calls are expensive (such as ListObjects) and which are cheap, and moved access from high cost to low cost.'
   - 'Built test coverage and change evidence: transactional tests with automatic rollback, full-path Spring test coverage, new tests plus change-control testing evidence for miniosync, propstore and maestrologger.'
-  - 'Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies for special tasks and the downstream lynx task. Lead for Maestro, the event-monitoring system: code review, improvements and sign-off.'
+  - 'Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies for special tasks and the downstream lynx task. Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
   - 'Proficient in AI-assisted development: Claude Code used daily for refactoring, test generation, branch merging, old-vs-new data-source comparison, minimal reproductions and incident analysis.'
+  - 'Scenario Extractor: generated stress-scenario data and served it through the Risk Data Endpoint.'
+  - 'Hedges Composer Tool (HCT): extracted Hedges P&L and calculated P&L at different Trade Wind Down times.'
+  - 'RSST: defined stress and TWD scenarios in SDL.'
+  - 'Investigated a bug in Lynx parquet file reads.'
 - title: Full Revaluation and Non-Managed CVA Calculation Process
   time: 2023 - 2025
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
-  position: Analyst, Senior Software Development
+  position: Analyst, Senior Software Developer
   content:
-  - 'Lead for the NM CVA module: owned requirements, delivery and production releases, plus post-release production support.'
+  - 'Lead for non-managed CVA: requirements, delivery, production release and post-release support.'
   - Built the Prefect pipeline that produces risk P/L and non-managed CVA under each stress scenario to guide trading decisions; per-trade calculation inside nodes, with high parallelism in both pre-processing and the Monte Carlo ComputeGrid service.
   - Combined ActivePivot (Prism) risk data with trade and market data; persisted results to Dremio and AWS S3 for the downstream UI team.
   - Designed an event-based listener to automate the pipeline; production support plus development-environment debugging and continuous monitoring.
   - Ran Japan CVA batches and aggregated results across regions; resolved read/write conflicts without losing parallelism and capped task parallelism to avoid long waits.
   - Refactored filter logic to accept more filters; configured exclusions and type changes for compliance.
-- title: Scenario Extractor · Risk Data Endpoint (RDE)
-  time: lead
-  company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
-  position: Analyst, Senior Software Development
-  content:
-  - 'Lead for the Scenario Extractor: generated stress-scenario data and exposed it to front-end UI users through the Risk Data Endpoint API; worked directly with Risk Management on requirements and design and owned the production release.'
 - title: Market Data Python ETL Framework Parsing Tool
   time: 2023 - 2024
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
-  position: Analyst, Senior Software Development
+  position: Analyst, Senior Software Developer
   content:
   - Aggregated multi-vendor market data and extracted the market-risk inputs each calculation model needs; optimised code paths across shared modules and custom models.
   - Traced and fixed production parsing issues through logs and Dremio, working with other departments on root cause.
@@ -41,7 +39,7 @@ work:
 - title: Java Scenario Service Analysis and P/L Tool
   time: 2023 - 2024
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
-  position: Analyst, Senior Software Development
+  position: Analyst, Senior Software Developer
   content:
   - Designed and built REST APIs for a scenario-analysis and P/L execution tool, modelled on real market scenarios and risk types.
   - Caching and multi-threading so the UI gets responses faster.
@@ -49,14 +47,14 @@ work:
 - title: ServiceNow Disaster Recovery
   time: 2023 - 2024
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
-  position: Analyst, Senior Software Development
+  position: Analyst, Senior Software Developer
   content:
   - Replaced department-by-department DR management with one ServiceNow Engine project across departments.
   - Distilled the Excel DR process into ServiceNow Data, Form and Flow, plus Kanban and process management.
 - title: Lynx Trade-Data ETL Module
   time: 2023.06 - 2023.12
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
-  position: Analyst, Senior Software Development
+  position: Analyst, Senior Software Developer
   content:
   - 'Owned ETL and analysis of upstream trade data: database configuration, business-rule CRUD and REST API migration.'
   - Delivered the Lynx 1.0 → 2.0 compatibility upgrade so upstream and downstream kept running through the version switch.
