@@ -12,7 +12,7 @@ work:
   - Orchestrated daily-stress batch jobs on Prefect, adding missing wait-for dependencies for special tasks and the downstream lynx task.
   - 'Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
   - 'Proficient in AI-assisted development: Claude Code used daily for refactoring, test generation, branch merging, old-vs-new data-source comparison, minimal reproductions and incident analysis.'
-- title: TWD side projects
+- title: TWD supporting tools
   time: 2024 - present
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
   position: Analyst, Senior Software Developer

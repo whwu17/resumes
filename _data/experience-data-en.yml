@@ -12,7 +12,7 @@ work:
   - 'Lead for Maestro communication: event send and receive within forward valuation (non-managed CVA).'
   - Worked around a small CI type-check bug for SQL Server BITS / LONGNVARCHAR; did not change the type checker.
   - 'Proficient in AI-assisted development: Claude Code for old-vs-new data-source comparison, script and test generation, and incident analysis.'
-- title: TWD side projects
+- title: TWD supporting tools
   time: 2024 - present
   company: Nomura (Shanghai) Information Technology Co., Ltd. · Risk and Control Technology
   position: Analyst, Senior Software Developer

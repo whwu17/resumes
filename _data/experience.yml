@@ -15,7 +15,7 @@ work:
   - "CI 类型检查里 SQL Server 的 BITS / LONGNVARCHAR 有一个小 bug，用 workaround 兼容，没有改类型检查本身。"
   - "熟练掌握 AI 辅助开发：Claude Code 日常用于重构、测试生成、分支合并、新旧数据源比对、最小化单测复现 debug、报障分析。"
 
-- title: "TWD 周边项目"
+- title: "TWD 配套工具"
   time: "2024 - 至今"
   company: "野村（上海）信息技术有限公司 · Risk and Control Technology"
   position: "Analyst (Senior Software Developer)"
